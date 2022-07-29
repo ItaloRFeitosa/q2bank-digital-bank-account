@@ -1,6 +1,18 @@
 version: '3.9'
 
 services:
+  app:
+    build: .
+    ports:
+      - 3333:3333
+    environment:
+      - DB_URL=root:password@tcp(mysql:3306)/q2_database?parseTime=true
+      - AUTHORIZER_URL=https://run.mocky.io/v3/d02168c6-d88d-4ff2-aac6-9e9eb3425e31
+      - JWT_PRIVATE_KEY
+      - JWT_PUBLIC_KEY
+    depends_on:
+      - mysql
+    restart: unless-stopped
   mysql:
     image: mysql:8
     ports:
