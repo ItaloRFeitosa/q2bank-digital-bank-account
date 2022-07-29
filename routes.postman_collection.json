@@ -1,0 +1,527 @@
+{
+	"info": {
+		"_postman_id": "5eeff338-dc0d-4148-8ebc-fd403a805d2a",
+		"name": "Q2Bank Digital Account",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9285539"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"kind\": \"CUSTOMER\",\n    \"document\": \"57872973002\",\n    \"name\": \"Fulano de tal\",\n    \"email\": \"fulano@tal.com\",\n    \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/sign-up",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"sign-up"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"kind\": \"CUSTOMER\",\n    \"document\": \"57872973006\",\n    \"name\": \"Fulano de tal\",\n    \"email\": \"fulano@tal.com\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/sign-up",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 28 Jul 2022 16:59:36 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "598"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"type\": \"Bearer\",\n        \"access_token\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTkwMjg0NzYsImlhdCI6MTY1OTAyNzU3NiwidXNlcl9pZCI6MSwiYWNjb3VudF9pZCI6MX0.6oruHXb3xgwO_MyeH335fy5UbC8kIrpfi-pVo8FysXyoGpCh_1Vi4IZgqP_W5N5WyzfpwbEg5cG9zarhKSpJH6PsKNjQUJb_wj0DvM6Dcryj55LsbTtZGVbizNTQVHQOHyzsEVNF05w8yLHvXZyijaX2TNDsWFzIOuGQebLxNgpqoR7yAfEIweio4-jF_xznkoMw1oQOfh5aSnA7Xy8dGf_UmCFJSGeCjaXwGAxqr1oK1jp1mfdROYOdlkGNPhIfcwCux0QWfPNOE6t04oszKjd67ROAJYQ08fVWA0-_d81FAwqkWZI0TFtoqkhIyfH_QsULYXzY32WDvnJKvMFSSw\",\n        \"expires_at\": \"2022-07-28T17:14:36.206284669Z\",\n        \"issued_at\": \"2022-07-28T16:59:36.206284669Z\"\n    }\n}"
+				},
+				{
+					"name": "Validation Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"kind\": \"CUSTOME\",\n    \"document\": \"5787297300\",\n    \"name\": \"\",\n    \"email\": \"fulanotal.com\",\n    \"password\": \"1234567\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/sign-up",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 28 Jul 2022 17:00:29 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "215"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": {\n        \"type\": \"VALIDATION_ERROR\",\n        \"context\": \"RegisterUserInput\",\n        \"reasons\": [\n            \"kind must be oneof CUSTOMER SELLER\",\n            \"document must be min 11\",\n            \"name must be required \",\n            \"email must be email \",\n            \"password must be min 8\"\n        ]\n    }\n}"
+				},
+				{
+					"name": "User Already Registered",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"kind\": \"CUSTOMER\",\n    \"document\": \"57872973002\",\n    \"name\": \"Fulano de tal\",\n    \"email\": \"fulano@tal.com\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/sign-up",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 28 Jul 2022 17:01:38 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "115"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": {\n        \"type\": \"BUSINESS_ERROR\",\n        \"context\": \"User\",\n        \"reasons\": [\n            \"can't register user with given email or document\"\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Sign in User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const body = pm.response.json()",
+							"",
+							"const hasAccessToken = !!body.data.access_token",
+							"",
+							"pm.test(\"body should have accessToken\", () => {",
+							"    pm.expect(hasAccessToken).to.be.true",
+							"})",
+							"",
+							"if(hasAccessToken){",
+							"    pm.environment.set(\"access_token\", body.data.access_token)",
+							"}",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"fulano@tal.com\",\n    \"password\": \"1234567\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/sign-in",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"sign-in"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"fulano@tal.com\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/sign-in",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 28 Jul 2022 17:05:07 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "598"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"type\": \"Bearer\",\n        \"access_token\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTkwMjg4MDcsImlhdCI6MTY1OTAyNzkwNywidXNlcl9pZCI6MSwiYWNjb3VudF9pZCI6MX0.Aiecfcje3Z2DGl5c5xlSaDLS880kjU8NNkRh-fIKC37UIHtknbXjnVr7D8YyOXAOMNFqbtsFzURwZiHagRJEPkRrHKZsK_fd1BO2cgYEvGCnlcHYvkKe2DjkIvij9FOuaZshlZDdPQlTjwEIvYWxXil9jDAxt2EgAK4mojcMpUyZTsbz1OdyplYo64Y2HbHCcsiGlvq_OSG8CU8tFndTIUkW3-aMsn2lffoKghmTZOQTFHvXqAgNMEkVDwPzfGcpyTV0fsZzebnv5ZoP7uRq3q_E-fLDzMG16mCGdkzbT8nca1yrSczCbVLKlcj01fP4u_xt7FNFn_LqgevDHTnxyA\",\n        \"expires_at\": \"2022-07-28T17:20:07.838846533Z\",\n        \"issued_at\": \"2022-07-28T17:05:07.838846533Z\"\n    }\n}"
+				},
+				{
+					"name": "SignIn Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"fulano@tal.com\",\n    \"password\": \"1234567\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/sign-in",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 28 Jul 2022 17:05:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "80"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": {\n        \"type\": \"BUSINESS_ERROR\",\n        \"context\": \"Auth\",\n        \"reasons\": [\n            \"can't sign in\"\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Transfer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payee_id\": 1,\n    \"amount\": 20000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/transfer",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"transfer"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payee_id\": 2,\n    \"amount\": 200\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/transfer",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transfer"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 28 Jul 2022 17:08:12 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "112"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"payer_id\": 1,\n        \"payee_id\": 2,\n        \"amount\": 200,\n        \"status\": \"DONE\",\n        \"created_at\": \"2022-07-28T17:08:12.056Z\"\n    }\n}"
+				},
+				{
+					"name": "Same Account Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payee_id\": 1,\n    \"amount\": 200\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/transfer",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transfer"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 28 Jul 2022 17:07:38 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "118"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": {\n        \"type\": \"BUSINESS_ERROR\",\n        \"context\": \"Transaction\",\n        \"reasons\": [\n            \"can't perform transfer between same accounts\"\n        ]\n    }\n}"
+				},
+				{
+					"name": "Seller Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payee_id\": 1,\n    \"amount\": 200\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/transfer",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transfer"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 28 Jul 2022 17:13:28 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "147"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"payer_id\": 2,\n        \"payee_id\": 1,\n        \"amount\": 200,\n        \"status\": \"FAILED\",\n        \"reason\": \"SELLER_CANNOT_CASH_OUT\",\n        \"created_at\": \"2022-07-28T17:13:28.38Z\"\n    }\n}"
+				},
+				{
+					"name": "Balance Not Enough",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payee_id\": 2,\n    \"amount\": 20000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/transfer",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transfer"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 28 Jul 2022 17:16:08 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "146"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"payer_id\": 1,\n        \"payee_id\": 2,\n        \"amount\": 20000,\n        \"status\": \"FAILED\",\n        \"reason\": \"BALANCE_NOT_ENOUGH\",\n        \"created_at\": \"2022-07-28T17:16:08.345Z\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
