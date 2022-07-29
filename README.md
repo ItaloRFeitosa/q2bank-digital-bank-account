@@ -5,3 +5,9 @@
 
 ## How to use
 Você pode utilizar a collection do postman. Tem as rotas disponiveis e exemplos.
+
+## Tech
+Golang 1.18
+GORM
+Gin Gonic
+MySQL
