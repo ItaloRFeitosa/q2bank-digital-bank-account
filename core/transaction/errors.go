@@ -3,7 +3,7 @@ package transaction
 import (
 	"errors"
 
-	"github.com/italorfeitosa/q2bank-digital-bank-account/common/error_builder"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/common/exception"
 )
 
 var ErrSellerCannotCashOut = errors.New("SELLER_CANNOT_CASH_OUT")
@@ -12,7 +12,7 @@ var ErrBalanceNotEnough = errors.New("BALANCE_NOT_ENOUGH")
 
 var ErrTransferUnauthorized = errors.New("UNAUTHORIZED")
 
-var TransactionError = error_builder.OfBusiness.WithContext("Transaction")
+var TransactionError = exception.OfBusiness.WithContext("Transaction")
 
 var ErrSameAccount = TransactionError.AddReason("can't perform transfer between same accounts").Build()
 

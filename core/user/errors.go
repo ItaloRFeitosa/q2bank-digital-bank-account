@@ -1,8 +1,8 @@
 package user
 
-import "github.com/italorfeitosa/q2bank-digital-bank-account/common/error_builder"
+import "github.com/italorfeitosa/q2bank-digital-bank-account/common/exception"
 
-var UserError = error_builder.
+var UserError = exception.
 	OfBusiness.
 	WithContext("User")
 

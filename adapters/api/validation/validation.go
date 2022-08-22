@@ -6,7 +6,7 @@ import (
 
 	"github.com/gin-gonic/gin/binding"
 	"github.com/go-playground/validator/v10"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/common/error_builder"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/common/exception"
 )
 
 func SetupValidator() {
@@ -22,7 +22,7 @@ func SetupValidator() {
 }
 
 func Error(errs validator.ValidationErrors) error {
-	builder := error_builder.
+	builder := exception.
 		OfValidation.
 		WithContext(strings.Split(errs[0].Namespace(), ".")[0])
 

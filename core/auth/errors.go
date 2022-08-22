@@ -1,8 +1,8 @@
 package auth
 
-import "github.com/italorfeitosa/q2bank-digital-bank-account/common/error_builder"
+import "github.com/italorfeitosa/q2bank-digital-bank-account/common/exception"
 
-var AuthError = error_builder.
+var AuthError = exception.
 	OfBusiness.
 	WithContext("Auth")
 

@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 	"github.com/italorfeitosa/q2bank-digital-bank-account/adapters/api/validation"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/common/error_builder"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/common/exception"
 )
 
 func Data(data any) gin.H {
@@ -31,7 +31,7 @@ func ValidationError(c *gin.Context, err error) {
 	InternalServerError(c, err)
 }
 func ServiceError(c *gin.Context, err error) {
-	if err, ok := err.(error_builder.AppError); ok {
+	if err, ok := err.(exception.Exception); ok {
 		c.AbortWithStatusJSON(http.StatusUnprocessableEntity, Error(err))
 		return
 	}
