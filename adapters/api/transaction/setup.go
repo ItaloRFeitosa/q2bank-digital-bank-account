@@ -2,8 +2,8 @@ package transaction
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/adapters/api/auth"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/modules/transaction"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/adapters/api/auth"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/core/transaction"
 	"gorm.io/gorm"
 )
 

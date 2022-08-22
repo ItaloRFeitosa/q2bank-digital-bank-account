@@ -3,7 +3,7 @@ package transaction
 import (
 	"errors"
 
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/shared/error_builder"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/common/error_builder"
 )
 
 var ErrSellerCannotCashOut = errors.New("SELLER_CANNOT_CASH_OUT")

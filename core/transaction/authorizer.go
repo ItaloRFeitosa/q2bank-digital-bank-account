@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/go-resty/resty/v2"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/shared/config"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/common/config"
 )
 
 type AuthorizerImpl struct {

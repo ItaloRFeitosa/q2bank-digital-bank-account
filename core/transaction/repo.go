@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/adapters/db"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/modules/user"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/adapters/db"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/core/user"
 	"gorm.io/gorm"
 )
 

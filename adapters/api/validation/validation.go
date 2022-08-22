@@ -6,7 +6,7 @@ import (
 
 	"github.com/gin-gonic/gin/binding"
 	"github.com/go-playground/validator/v10"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/shared/error_builder"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/common/error_builder"
 )
 
 func SetupValidator() {

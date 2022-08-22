@@ -1,8 +1,8 @@
 package auth
 
 import (
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/modules/account"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/modules/user"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/core/account"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/core/user"
 	"gorm.io/gorm"
 )
 

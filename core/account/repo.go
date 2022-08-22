@@ -3,7 +3,7 @@ package account
 import (
 	"context"
 
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/adapters/db"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/adapters/db"
 	"gorm.io/gorm"
 )
 

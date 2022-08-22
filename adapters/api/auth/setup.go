@@ -2,7 +2,7 @@ package auth
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/modules/auth"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/core/auth"
 	"gorm.io/gorm"
 )
 

@@ -6,8 +6,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/adapters/api/validation"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/shared/error_builder"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/adapters/api/validation"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/common/error_builder"
 )
 
 func Data(data any) gin.H {

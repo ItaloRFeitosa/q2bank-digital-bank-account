@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/modules/user"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/core/user"
 )
 
 type UseCase interface {

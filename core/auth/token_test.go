@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/golang-jwt/jwt/v4"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/shared/key"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/common/key"
 	"github.com/stretchr/testify/suite"
 )
 

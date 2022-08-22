@@ -6,7 +6,7 @@ import (
 	"time"
 
 	jwt "github.com/golang-jwt/jwt/v4"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/shared/key"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/common/key"
 )
 
 const defaultTTL time.Duration = 15 * time.Minute

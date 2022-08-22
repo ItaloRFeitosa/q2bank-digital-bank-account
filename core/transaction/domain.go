@@ -3,7 +3,7 @@ package transaction
 import (
 	"time"
 
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/modules/user"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/core/user"
 )
 
 type Type string

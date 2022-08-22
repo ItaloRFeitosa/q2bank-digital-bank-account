@@ -2,12 +2,12 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/adapters/api/auth"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/adapters/api/transaction"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/adapters/api/validation"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/adapters/db"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/shared/config"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/shared/key"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/adapters/api/auth"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/adapters/api/transaction"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/adapters/api/validation"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/adapters/db"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/common/config"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/common/key"
 	"gorm.io/gorm"
 )
 

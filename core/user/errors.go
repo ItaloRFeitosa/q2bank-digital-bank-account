@@ -1,6 +1,6 @@
 package user
 
-import "github.com/italorfeitosa/q2bank-digital-bank-account/internal/shared/error_builder"
+import "github.com/italorfeitosa/q2bank-digital-bank-account/common/error_builder"
 
 var UserError = error_builder.
 	OfBusiness.

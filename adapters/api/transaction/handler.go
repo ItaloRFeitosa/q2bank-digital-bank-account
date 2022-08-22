@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/adapters/api/response"
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/modules/transaction"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/adapters/api/response"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/core/transaction"
 )
 
 type Handler struct {

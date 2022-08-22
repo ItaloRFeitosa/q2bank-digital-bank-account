@@ -1,7 +1,7 @@
 package db
 
 import (
-	"github.com/italorfeitosa/q2bank-digital-bank-account/internal/shared/config"
+	"github.com/italorfeitosa/q2bank-digital-bank-account/common/config"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
