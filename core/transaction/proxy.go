@@ -6,12 +6,12 @@ import (
 	"gorm.io/gorm"
 )
 
-type TxProxy struct {
-	*Service
+type transactionProxy struct {
+	*service
 	db *gorm.DB
 }
 
-func (s *TxProxy) Transfer(ctx context.Context, in TransferInput) (TransferOutput, error) {
+func (s *transactionProxy) Transfer(ctx context.Context, in TransferInput) (TransferOutput, error) {
 	tx := s.db.Begin()
 	out, err := s.withTx(tx).Transfer(ctx, in)
 	if err != nil {

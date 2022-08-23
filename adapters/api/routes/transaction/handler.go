@@ -9,7 +9,7 @@ import (
 )
 
 type Handler struct {
-	service transaction.UseCase
+	service transaction.Service
 }
 
 func (h *Handler) Transfer(c *gin.Context) {

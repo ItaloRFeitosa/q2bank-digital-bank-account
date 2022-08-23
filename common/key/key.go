@@ -8,9 +8,9 @@ import (
 
 const (
 	privKeyEnv  = "JWT_PRIVATE_KEY"
-	privKeyPath = "/internal/common/key/private.pem"
+	privKeyPath = "/common/key/private.pem"
 	pubKeyEnv   = "JWT_PUBLIC_KEY"
-	pubKeyPath  = "/internal/common/key/public.pem"
+	pubKeyPath  = "/common/key/public.pem"
 )
 
 var privKey []byte

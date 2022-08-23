@@ -7,15 +7,10 @@ import (
 	"github.com/italorfeitosa/q2bank-digital-bank-account/core/user"
 )
 
-type UseCase interface {
-	SignUp(ctx context.Context, in user.RegisterUserInput) (*SignOutput, error)
-	SignIn(ctx context.Context, in SignInInput) (*SignOutput, error)
+type Service interface {
+	SignUp(ctx context.Context, in user.RegisterUserInput) (SignOutput, error)
+	SignIn(ctx context.Context, in SignInInput) (SignOutput, error)
 	VerifyAndDecodeToken(token string) (SignData, error)
-}
-
-type SignInInput struct {
-	Email    string `json:"email" binding:"required"`
-	Password string `json:"password" binding:"required"`
 }
 
 type SignOutput struct {
@@ -36,7 +31,7 @@ type UserData struct {
 }
 
 type Token interface {
-	Sign(data SignData) (*SignOutput, error)
+	Sign(data SignData) (SignOutput, error)
 	Verify(token string) (SignData, error)
 }
 

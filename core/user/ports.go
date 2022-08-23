@@ -1,16 +1,10 @@
 package user
 
-import "context"
+import (
+	"context"
+)
 
-type RegisterUserInput struct {
-	Kind     Kind   `json:"kind" binding:"required,oneof=CUSTOMER SELLER"`
-	Document string `json:"document" binding:"required,numeric,min=11,max=14"`
-	Name     string `json:"name" binding:"required"`
-	Email    string `json:"email" binding:"required,email"`
-	Password string `json:"password" binding:"required,min=8"`
-}
-
-type UseCase interface {
+type Service interface {
 	RegisterUser(ctx context.Context, in RegisterUserInput) (uint, error)
 	CheckPassword(hash, password string) bool
 }

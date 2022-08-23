@@ -2,7 +2,7 @@ package user
 
 import "gorm.io/gorm"
 
-func NewService(db *gorm.DB) *Service {
+func NewService(db *gorm.DB) *service {
 
-	return &Service{repo: &Repo{db}, crypto: &CryptoImpl{}}
+	return &service{repo: &Repo{db}, crypto: &CryptoImpl{}}
 }

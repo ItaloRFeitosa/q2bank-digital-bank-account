@@ -34,7 +34,7 @@ type Claims struct {
 	SignData
 }
 
-func (t *TokenImpl) Sign(data SignData) (*SignOutput, error) {
+func (t *TokenImpl) Sign(data SignData) (SignOutput, error) {
 	iat := time.Now().UTC()
 	exp := iat.Add(t.ttl)
 
@@ -47,10 +47,10 @@ func (t *TokenImpl) Sign(data SignData) (*SignOutput, error) {
 
 	signed, err := token.SignedString(t.private)
 	if err != nil {
-		return nil, err
+		return SignOutput{}, err
 	}
 
-	return &SignOutput{
+	return SignOutput{
 		Type:        "Bearer",
 		AccessToken: signed,
 		ExpiresAt:   exp,

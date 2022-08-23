@@ -16,5 +16,6 @@ func DB() *gorm.DB {
 	if err != nil {
 		panic("failed to migrate models")
 	}
+
 	return db
 }

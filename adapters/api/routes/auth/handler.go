@@ -2,7 +2,6 @@ package auth
 
 import (
 	"net/http"
-	"strings"
 
 	"github.com/gin-gonic/gin"
 	"github.com/italorfeitosa/q2bank-digital-bank-account/adapters/api/response"
@@ -11,7 +10,7 @@ import (
 )
 
 type Handler struct {
-	service auth.UseCase
+	service auth.Service
 }
 
 func (h *Handler) SignUp(c *gin.Context) {
@@ -42,37 +41,4 @@ func (h *Handler) SignIn(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, response.Data(res))
-}
-
-func (h *Handler) EnsureAuthorized(c *gin.Context) {
-	header := c.GetHeader("Authorization")
-
-	if header == "" {
-		c.AbortWithStatus(http.StatusUnauthorized)
-		return
-	}
-
-	token := strings.Split(header, " ")
-
-	if len(token) != 2 {
-		c.AbortWithStatus(http.StatusUnauthorized)
-		return
-	}
-
-	if token[0] != "Bearer" {
-		c.AbortWithStatus(http.StatusUnauthorized)
-		return
-	}
-
-	data, err := h.service.VerifyAndDecodeToken(token[1])
-
-	if err != nil {
-		c.AbortWithStatus(http.StatusUnauthorized)
-		return
-	}
-
-	c.Set("account_id", data.AccountID)
-	c.Set("user_id", data.UserID)
-
-	c.Next()
 }

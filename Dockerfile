@@ -11,7 +11,7 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o ./out/main ./cmd/api
+RUN go build -o ./out/main .
 
 FROM alpine:3.16 
 RUN apk add ca-certificates

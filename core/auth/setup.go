@@ -6,8 +6,8 @@ import (
 	"gorm.io/gorm"
 )
 
-func NewService(db *gorm.DB) *TxProxy {
-	return &TxProxy{db: db, Service: &Service{
+func NewService(db *gorm.DB) Service {
+	return &TxProxy{db: db, service: &service{
 		user.NewService(db),
 		account.NewService(db),
 		&Repo{db},
@@ -15,8 +15,8 @@ func NewService(db *gorm.DB) *TxProxy {
 	}}
 }
 
-func (s *TxProxy) withTx(tx *gorm.DB) *Service {
-	return &Service{
+func (s *TxProxy) withTx(tx *gorm.DB) Service {
+	return &service{
 		user.NewService(tx),
 		account.NewService(tx),
 		&Repo{tx},

@@ -4,12 +4,12 @@ import (
 	"context"
 )
 
-type Service struct {
+type service struct {
 	repo   Repository
 	crypto Crypto
 }
 
-func (s *Service) RegisterUser(ctx context.Context, in RegisterUserInput) (uint, error) {
+func (s *service) RegisterUser(ctx context.Context, in RegisterUserInput) (uint, error) {
 	exists, err := s.repo.Exists(ctx, in.Document, in.Email)
 
 	if err != nil {
@@ -33,6 +33,6 @@ func (s *Service) RegisterUser(ctx context.Context, in RegisterUserInput) (uint,
 	return id, nil
 }
 
-func (s *Service) CheckPassword(hash, password string) bool {
+func (s *service) CheckPassword(hash, password string) bool {
 	return s.crypto.Compare(hash, password)
 }

@@ -8,11 +8,11 @@ import (
 )
 
 type TxProxy struct {
-	*Service
+	*service
 	db *gorm.DB
 }
 
-func (s *TxProxy) SignUp(ctx context.Context, in user.RegisterUserInput) (*SignOutput, error) {
+func (s *TxProxy) SignUp(ctx context.Context, in user.RegisterUserInput) (SignOutput, error) {
 	tx := s.db.Begin()
 	out, err := s.withTx(tx).SignUp(ctx, in)
 	if err != nil {

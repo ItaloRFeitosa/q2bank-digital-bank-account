@@ -16,13 +16,13 @@ type ServiceTestSuite struct {
 	suite.Suite
 	repo    *RepositoryMock
 	crypto  *CrytoMock
-	service *Service
+	service *service
 }
 
 func (s *ServiceTestSuite) SetupTest() {
 	s.repo = new(RepositoryMock)
 	s.crypto = new(CrytoMock)
-	s.service = &Service{s.repo, s.crypto}
+	s.service = &service{s.repo, s.crypto}
 }
 
 func (s *ServiceTestSuite) TestRegisterUser_Success() {

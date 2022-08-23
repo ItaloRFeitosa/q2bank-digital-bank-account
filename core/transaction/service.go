@@ -2,12 +2,12 @@ package transaction
 
 import "context"
 
-type Service struct {
+type service struct {
 	repo Repository
 	auth Authorizer
 }
 
-func (s *Service) Transfer(ctx context.Context, in TransferInput) (TransferOutput, error) {
+func (s *service) Transfer(ctx context.Context, in TransferInput) (TransferOutput, error) {
 	payer, err := s.repo.FindAccount(ctx, in.PayerID)
 	if err != nil {
 		return TransferOutput{}, err
@@ -34,13 +34,5 @@ func (s *Service) Transfer(ctx context.Context, in TransferInput) (TransferOutpu
 		return TransferOutput{}, err
 	}
 
-	return TransferOutput{
-		ID:        transfer.ID,
-		PayerID:   transfer.Payer.ID,
-		PayeeID:   transfer.Payee.ID,
-		Amount:    transfer.Amount,
-		Status:    transfer.Status.String(),
-		Reason:    transfer.Reason(),
-		CreatedAt: transfer.CreatedAt,
-	}, err
+	return newTransferOutput(transfer), err
 }
